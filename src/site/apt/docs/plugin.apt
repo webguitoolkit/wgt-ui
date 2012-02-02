@@ -1,0 +1,54 @@
+ -----
+ Web GUI Toolkit WGT
+ -----
+ Endress+Hauser
+ -----
+ April 24, 2008
+ 
+Eclipse Plug-In Documentation
+
+
+--------------------------------------------
+1. Got to "Help, Software Updates, find and Install..." in your Eclipse workspace 
+and select "Search for new Features" on the next screen.
+--------------------------------------------
+
+[../images/screens/plugin/install01.jpg] Install 1
+
+--------------------------------------------
+2. Select "Add new remote Site" and add the URL 
+http://is207.infoserve.endress.com:8080/WebGuiToolkit/update/ . 
+Confirm with OK. Make sure, the "WGT plugin" checkbox is selected and click "Finish".
+--------------------------------------------
+
+[../images/screens/plugin/install02.jpg] Install 2
+
+--------------------------------------------
+3. Select The "WGT eclipse Feature ..." and click "Next".
+--------------------------------------------
+
+[../images/screens/plugin/install03.jpg] Install 3
+
+--------------------------------------------
+4. Accept the licence, if you agree.
+--------------------------------------------
+
+[../images/screens/plugin/install04.jpg] Install 4
+
+--------------------------------------------
+5. Check overview and click "Finish".
+--------------------------------------------
+
+[../images/screens/plugin/install05.jpg] Install 5
+
+--------------------------------------------
+6. Verify and click "Install".
+--------------------------------------------
+
+[../images/screens/plugin/install06.jpg] Install 6
+
+--------------------------------------------
+7. Restart your eclipse and your done.
+--------------------------------------------
+
+[../images/screens/plugin/install07.jpg] Install 7

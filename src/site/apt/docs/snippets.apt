@@ -1,0 +1,37 @@
+ -----
+ Web GUI Toolkit WGT
+ -----
+ Endress+Hauser
+ -----
+ April 24, 2008
+ 
+Eclipse Snippet Documentation
+This document shows you how to import Snippets in your Eclipse IDE and use them for WGT Development
+
+{{{../download/wgt_snippets.xml}Download Eclipse Snippets}}
+
+--------------------------------------------
+1. Got to Snippets View in your Eclipse workspace and click right mouse for "Customize".
+--------------------------------------------
+
+[../images/screens/snippets/customize_snippets.jpg] Cutomize
+
+--------------------------------------------
+2. Select "Import" to add the WGT Snippets
+--------------------------------------------
+
+[../images/screens/snippets/import_snippts_01.jpg] import
+
+--------------------------------------------
+3. Select wgt_snippets.xml and click open. 
+You can now move the WGT Snippets by clicking up and down and confirm with OK.
+--------------------------------------------
+
+[../images/screens/snippets/import_snippts_02.jpg] import 2
+
+--------------------------------------------
+4. Got to Snippets View and pull the snippet into your source code. 
+Set the required variables in the prompt. 
+--------------------------------------------
+
+[../images/screens/snippets/use_snippet.jpg] Use

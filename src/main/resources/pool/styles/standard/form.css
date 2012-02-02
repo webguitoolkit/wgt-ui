@@ -1,0 +1,165 @@
+/**********************************************************
+ Form Elements
+***********************************************************/
+
+.wgtInputText, .wgtInputTextWithButton, .wgtComboText {
+	height: 16px;
+	border-style: solid;
+	border-color: #999999;
+	border-width: 1px 1px 1px 1px;
+	padding-left: 2px;
+	padding-right: 2px;	
+	padding-top: 0px;
+	padding-bottom: 0px;
+	width:160px;
+}
+.wgtInputTextWithButton, .wgtComboText{
+	width:147px;
+	border-right-width: 0px;
+	vertical-align:middle;
+}
+
+.wgtInputFile {
+	/*height: 16px;*/
+	border-style: solid;
+	border-color: #999999;
+	border-width: 1px 1px 1px 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.wgtText {
+}
+
+.wgtInputTextarea {
+	border-style: solid;
+	border-color: #999999;
+	border-width: 1px 1px 1px 1px;
+	width: 200px;
+	height: 100px;
+	margin-top: 0px;
+	vertical-align: top;
+	overflow-y: auto;
+}
+
+.wgtInputTextareaPopup {
+	height: 16px;
+	width:150px;
+	overflow-y: hidden;
+}
+
+.wgtTxtPopup {
+	background-color: #CECECE;
+}
+
+.wgtSelect {
+	width:160px
+}
+.wgtCombo {
+	margin-top:  0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.wgtFormBtnStdNextStep {   
+	cursor: hand;
+	background-color:#E9F2FA;
+	background-image:url(../images/wgt/btnnextstep.gif);
+	background-position:right center;
+	background-repeat:no-repeat;
+	border-color:#B8C1CC rgb(48, 48, 71) rgb(48, 48, 71) rgb(184, 193, 204);
+	border-style:solid !important;
+	border-width:1px !important;
+	color:#000000;
+	padding:0pt 16px 0pt 3px;
+	text-decoration:none;
+}
+
+.wgtInputRadio {
+}
+
+.wgtInputCheckbox {
+}
+
+/* readonly for input:text and textarea */
+.wgtReadonly {
+	background-color: #F5F7F9;
+	border-color: #CCCCCC;
+}
+
+/* error */
+.wgtInputError {
+	background-color: #FFCCCC !important;
+}
+
+/* Multiselect */
+div.wgtMultiselectContainer{
+    overflow-y: scroll;
+    border:1px solid #999999;
+    background-color: #ffffff;
+}
+
+div.wgtMultiselectContainer_dis{
+    overflow-y: scroll;
+    border:1px solid #CCCCCC;
+    background-color: #ffffff; 
+}
+
+ul.wgtMultiselect_entries {
+    position: relative;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.wgtMultiselect_entries .wgtMultiselect_entry {
+    display: block;
+    height: 16px;
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+.wgtMultiselect_entries .wgtMultiselect_entry_selected {
+    display: block;
+    height: 16px;
+    cursor: pointer;
+    padding-left: 5px;
+    background-color: Highlight;
+    color: HighlightText;        
+}
+
+.wgtMultiselect_entries .wgtMultiselect_entry_dis {
+    display: block;
+    cursor: default;
+    padding-left: 5px;
+    height: 16px;
+    background-color: #F5F7F9;
+}
+
+.wgtMultiselect_entries .wgtMultiselect_entry_selected_dis {
+    display: block;
+    padding-left: 5px;
+    height: 16px;
+    cursor: default;
+    background-color: #A57E59;
+    color: #CCCCCC;        
+}
+
+.suggestBox{border:1px solid #999999;height:16px;padding:0px 2px;width:160px;font-family:arial,helvetica,sans-serif;height:100%;overflow-x:hidden;}
+.wgtSuggestResults {background-color:white;border:1px solid black;overflow:hidden;padding:0px;z-index:99999;}
+.wgtSuggestResults ul {list-style-image:none;list-style-position:outside;list-style-type:none;margin:0pt;padding:0pt;width:100%;}
+.wgtSuggestResults li {cursor:default;display:block;font-family:menu;font-size:12px;line-height:16px;margin:0px;overflow:hidden;padding:2px 5px;}
+.wgtSuggestLoading {background:white url(indicator.gif) no-repeat scroll right center;}
+.wgtSuggestOdd{background-color:#EEEEEE;}
+.wgtSuggestOver {background-color:#6A240A;color:white;}
+.wgtValidatorIcon {
+    color: #990000;  
+    font-weight: bold;
+    text-align: left;
+    padding-left: 2px;
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<listener>
+		<listener-class>
+			org.webguitoolkit.ui.util.UnTranslatedTextCollector		
+		</listener-class>
+  	</listener>
+	
+	<filter>
+        <filter-name>Timeout-Filter</filter-name>
+        <filter-class>org.webguitoolkit.ui.http.SessionTimeoutFilter</filter-class>
+        <init-param>
+            <param-name>DWR_MODE</param-name>
+          <param-value>XML</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Timeout-Filter</filter-name>
+        <url-pattern>/dwr/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Timeout-Filter</filter-name>
+        <url-pattern>*.event</url-pattern>
+    </filter-mapping>
+	
+	<filter>
+		<filter-name>SessionFilter</filter-name>
+		<!-- TODO: Insert SessionFilter class here -->
+		<filter-class>org.webguitoolkit.ui.http.WGTFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>*.event</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/dwr/call/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/page/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/Chart/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/FileUpload</url-pattern>
+	</filter-mapping>
+	
+	
+	<servlet>
+	  <servlet-name>dwr-invoker</servlet-name>
+	  <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+	  <init-param>
+	     <param-name>debug</param-name>
+	     <param-value>true</param-value>
+	  </init-param>
+	</servlet>
+    <servlet>
+	  <servlet-name>resource_servlet</servlet-name>
+	  <servlet-class>org.webguitoolkit.ui.http.ResourceServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>	  
+	</servlet>
+	<servlet>
+      <servlet-name>DisplayChart</servlet-name>
+      <servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+    </servlet>
+	<servlet>
+      <servlet-name>FileUpload</servlet-name>
+      <servlet-class>org.webguitoolkit.ui.controls.form.fileupload.FileUploadServlet</servlet-class>
+	  <init-param>
+	     <param-name>MAX_FILE_SIZE</param-name>
+	     <param-value>536870912</param-value>
+	     <!-- 512 MB -->
+	  </init-param>
+    </servlet>
+	<servlet>
+	  <servlet-name>PageServlet</servlet-name>
+	  <servlet-class>org.webguitoolkit.ui.http.PageServlet</servlet-class>
+	  <init-param><description>import or prefixes of the Page objects to be loaded</description>
+	  <param-name>import</param-name>
+	  <param-value>	mycompany.myproject.main;
+	  				mycompany.myproject.admin
+	  </param-value>
+	  </init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>PageServlet</servlet-name>
+		<url-pattern>/page/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisplayChart</servlet-name>
+		<url-pattern>/Chart/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FileUpload</servlet-name>
+		<url-pattern>/FileUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>resource_servlet</servlet-name>
+		<url-pattern>/wgt-resources/*</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+	<!-- enter the name of the start page here -->
+	  <welcome-file>page/Start</welcome-file>
+	</welcome-file-list>
+</web-app>

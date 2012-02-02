@@ -1,0 +1,21 @@
+ -----
+ Web GUI Toolkit WGT
+ -----
+ Endress+Hauser
+ -----
+ April 2008
+ 
+The Eclipse Plugin
+
+ Goals:
+ 
+ * Easy start for new developers
+
+ * Fast and easy creation of new projects
+ 
+ * Integration in our standard environment
+
+* Update site
+
+ The plugin can received by pointing to our eclipse update site: http://is207.infoserve.endress.com:8080/WebGuiToolkit/update
+ 

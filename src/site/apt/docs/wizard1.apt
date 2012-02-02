@@ -1,0 +1,52 @@
+ -----
+ Web GUI Toolkit WGT
+ -----
+ Endress+Hauser
+ -----
+ April 24, 2008
+ 
+Setup a new WGT Project using the WGT Wizard
+
+--------------------------------------------
+1. Got to "File, New, Other" in your Eclipse workspace and 
+select the "WGT Project wizard" from the list.
+--------------------------------------------
+
+[../images/screens/plugin/wizard01.jpg] Wizard 1
+
+--------------------------------------------
+2. Enter the the required Parameters for your Project (Minimum Project name and Package). 
+Click "Finish"
+--------------------------------------------
+
+[../images/screens/plugin/wizard02.jpg] Wizard 2
+
+--------------------------------------------
+3. When the project was created, select it an go to 
+"MyEclipse, Project Capabilities, Add Web Project Capabilities";
+--------------------------------------------
+
+[../images/screens/plugin/capabilities01.jpg] Wizard 3
+
+--------------------------------------------
+4. Enter your "Web context root", select your Java Version and click "Finish".
+--------------------------------------------
+
+[../images/screens/plugin/capabilities02.jpg] Wizard 4
+
+--------------------------------------------
+5. Deploy the new Project to your local MyEclipse Tomcat and start the server
+--------------------------------------------
+
+[../images/screens/plugin/deploy.jpg] Wizard 5
+
+--------------------------------------------
+6. Go to your favourite browser and enter the new URL of your application. 
+In most cases it will be http://localhost:8080/<your web context root from step 4> 
+--------------------------------------------
+
+[../images/screens/plugin/hello_wgt.jpg] Wizard 6
+
+--------------------------------------------
+6. A welcome Page-class was created for you. This class is ready for your development
+--------------------------------------------

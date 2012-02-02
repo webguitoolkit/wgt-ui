@@ -1,0 +1,19 @@
+Combobox: 
+Frei (keine Angaben zur Lizens)
+
+JFreeChart 2.8.5
+GNU Lesser General Public Licence
+
+DWR 2.0 m3
+Apache License, Version 2.0
+
+jsCalendar 1.0
+GNU Lesser General Public License
+
+overlib 4.21
+Frei (keine Standartlizens)
+
+Tree
+
+famfamfam silk icons
+Creative Commons Attribution 2.5 Generic (free). Check famfamfam_readme.txt in licences folder

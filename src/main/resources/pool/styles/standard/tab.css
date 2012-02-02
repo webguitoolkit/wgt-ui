@@ -1,0 +1,223 @@
+/**********************************************************
+ Tabstrip
+***********************************************************/
+
+.wgtTabStrip {
+    margin-top: 0px;
+    margin-left:0px;
+}
+
+.wgtTabPane {
+    border-top: 2px solid #FF9933;
+    background:#F5F7F9; 
+    width:800px;
+}
+    
+.wgtTabPane .wgtTabContentBorder {
+    border-left: 2px solid #CCCCCC;
+    border-right: 2px solid #CCCCCC;
+}
+    
+.wgtTabPane .wgtLBFooter {
+    background:url('../images/wgt/tab/tsr-lb.gif') bottom left no-repeat; 
+    height: 4px; 
+    font-size:4px !important;
+    width: 9px;
+}
+    
+.wgtTabPane .wgtCFooter {
+    border-color:#CCCCCC;   
+    border-style:solid;     
+    border-width:0 0 2px 0; 
+    height: 4px; 
+    font-size:4px !important;
+    width: 98%;
+}
+    
+ .wgtTabPane .wgtRBFooter {
+    background:url('../images/wgt/tab/tsr-rb.gif') bottom right no-repeat; 
+    height: 4px; 
+    font-size:4px !important;
+    width: 9px;
+}
+    
+/*
+Setzen der min-height
+*/  
+* html .wgtTabPane .wgtTabContent { 
+    height: 250px; 
+}
+
+.wgtTabPane .wgtTabContent { 
+    min-height: 250px; 
+}
+
+.wgtTabSelected, .wgtTabUnselected {
+    background-repeat: repeat-x;
+    cursor: pointer;
+    padding-top: 2px;
+}
+
+.wgtTabSelected {
+    background-image:url(../images/wgt/tab/tabSelected.gif);
+    color: white;
+}
+.wgtTabselected td {
+    color: white;
+}
+
+.wgtTabUnselected td {
+    color: black;
+}
+
+.wgtTabUnselected {
+    background-image:url(../images/wgt/tab/tabUnselected.gif);
+    color : black;
+}
+
+.wgtTabDisabled {
+    background-image:url(../images/wgt/tab/tabUnselected.gif);
+    background-repeat: repeat-x;
+    color : gray;
+}
+.wgtTabdisabled td {
+    color : gray;
+}
+
+.wgtTabFirstUnselected, .wgtTabFirstSelected, .wgtTabLastUnselected, .wgtTabLastSelected {
+    width : 9px; 
+    background-repeat: no-repeat;
+}
+.wgtTabFirstUnselected {
+    background-image:url(../images/wgt/tab/tabFirstUnselected.gif);
+}
+
+.wgtTabFirstSelected {
+    background-image:url(../images/wgt/tab/tabFirstSelected.gif);
+}
+
+.wgtTabLastUnselected {
+    background-image:url(../images/wgt/tab/tabLastUnselected.gif);
+    background-position: top right;
+}
+
+.wgtTabLastSelected {
+    background-image:url(../images/wgt/tab/tabLastSelected.gif);
+    background-position: top right;
+}
+
+
+.wgtTabBetweenUnselected, .wgtTabLeftOfSelected, .wgtTabRightOfSelected {
+    background-repeat: no-repeat;
+    width : 18px;
+} 
+.wgtTabLeftOfSelected {
+    background-image:url(../images/wgt/tab/tabLeftOfSelected.gif);
+}
+
+.wgtTabRightOfSelected {
+    background-image:url(../images/wgt/tab/tabRightOfSelected.gif);
+}
+
+.wgtTabBetweenUnselected {
+    background-image:url(../images/wgt/tab/tabBetweenUnselected.gif);
+}
+
+.accordion {
+    width: 200px;
+    margin: 1em .5em;
+    border: 1px solid #99ccff;
+}
+
+.accordion-head {
+    font-size: 11px;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 2px;
+    width: 100%;
+    background: #0099ff;
+    color: #ffffff;
+    border-top: 1px solid #99ccff;
+    border-bottom: 1px solid #99ccff;
+    cursor: pointer;
+}
+
+.accordion-body {
+    border: 1px solid lightgrey;
+    width: 100%;
+    padding: 2px 2px 2px 4px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.tabStripButton span span {
+    border-bottom: 0px solid #aaa;
+}
+
+.wgtTabTraditional .wgtTabButtonLeft{
+    background: #FFFFFF url(../images/wgt/tab/tabFirstUnselected.gif) repeat-x scroll 0 0; 
+    width: 9px;
+    height: 20px;
+    float: left;
+}
+
+.wgtTabTraditional .wgtTabButtonContent{
+    background: #FFFFFF url(../images/wgt/tab/tabUnselected.gif) repeat-x scroll 0 0; 
+    height: 20px;
+    float: left;
+}
+
+.wgtTabTraditional .wgtTabButtonRight{
+    background: #FFFFFF url(../images/wgt/tab/tabLastUnselected.gif) repeat-x scroll 0 0; 
+    width: 9px;
+    height: 20px;
+    float: left;
+    background-position: right top;
+}
+a.wgtTabTraditional:HOVER{
+    text-decoration: none;
+}
+.wgtTabTraditional .text{
+    margin-top: 4px;
+}
+.wgtTabButtonContent .text{
+    color: black;
+}
+.selectedButton .wgtTabButtonContent .text{
+    color: white;
+}
+
+.selectedButton .wgtTabButtonLeft {
+    background: #FFFFFF url(../images/wgt/tab/tabFirstSelected.gif) repeat-x scroll 0 0; 
+}
+.selectedButton .wgtTabButtonContent {
+    background: #FFFFFF url(../images/wgt/tab/tabSelected.gif) repeat-x scroll 0 0; 
+}
+.selectedButton .wgtTabButtonRight {
+    background: #FFFFFF url(../images/wgt/tab/tabLastSelected.gif) repeat-x scroll 0 0; 
+    background-position: right top;
+}
+
+/**********************************************************
+ Wizard
+***********************************************************/
+.wgtWzFooter {
+    position: absolute;
+    text-align: center;
+    float: right;
+    width: 100%;
+    background-color: #cccccc;
+}
+
+.wgtWzTabPane {
+    width: 100%;
+}
+
+.wgtWzButtonExtra {
+    width: 80px;
+    margin-left: 5px;
+}
+
+
+

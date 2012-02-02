@@ -1,0 +1,57 @@
+<project name="GetWebFiles" default="update" basedir=".">
+    <description>
+        get required css, js and tld files
+    </description>
+
+  <property name="src" location="WebRoot"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+  </target>
+
+  <target name="getInitial" depends="init" description="get required files and web.xml, then You have to change the web.xml for Your project." >
+	  <copy todir="${target}" >
+	  	<fileset dir="${src}">
+	        <exclude name="**/.svn"/>
+	        <exclude name="**/.svn/**"/>
+	  	</fileset>
+	  </copy>
+  </target>
+	
+  <target name="update_prompt" depends="init" description="get required files" >
+      <input
+           message="Please enter project name:"
+           addproperty="project.name"
+         />        
+      <copy todir="../../${project.name}/WebRoot"  verbose="true">
+        <fileset dir="${src}">
+            <exclude name="**/.svn"/>
+            <exclude name="**/.svn/**"/>
+            <exclude name="**/web.xml"/>
+        </fileset>
+      </copy>
+  </target>
+	
+  <target name="update" depends="init" description="get required css, jsp, js and tld files" >
+	  <copy todir="${target}"  verbose="true">
+	  	<fileset dir="${src}">
+	        <exclude name="**/.svn"/>
+	        <exclude name="**/.svn/**"/>
+	        <exclude name="**/web.xml"/>
+	  	</fileset>
+	  </copy>
+  </target>
+
+  <target name="update_force" depends="init" description="get required css, jsp, js and tld files" >
+	  <copy overwrite="true" todir="${target}" >
+	  	<fileset dir="${src}">
+	        <exclude name="**/.svn"/>
+	        <exclude name="**/.svn/**"/>
+	        <exclude name="**/web.xml"/>
+	  	</fileset>
+	  </copy>
+  </target>
+	
+</project>
+

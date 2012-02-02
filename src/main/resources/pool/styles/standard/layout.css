@@ -1,0 +1,57 @@
+
+/* Border Layout */
+.wgtBorderLayoutTable{
+    height:100%;
+    width:100%;
+    margin: 0;
+	padding: 0;
+	border: none;
+	text-align: left;
+	vertical-align: top;
+}
+.wgtBorderLayoutNorthRow{
+	height:20%;
+}
+.wgtBorderLayoutCenterRow{
+    height:70%;
+}
+.wgtBorderLayoutSouthRow{
+    height:10%;
+}
+.wgtBorderLayoutEastCell{
+	width: 20%
+    vertical-align: top;
+}
+.wgtBorderLayoutCenterCell{
+    width: 60%
+    vertical-align: top;
+}
+.wgtBorderLayoutWestCell{
+    width: 20%;
+    vertical-align: top;
+}
+
+/* Grid Layout */
+.wgtGridLayoutTable{
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+    vertical-align: top;
+}
+.wgtGridLayoutRow{
+
+}
+
+/* Sequential Table Layout */
+.wgtSequentialTableLayoutTable{
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+    vertical-align: top;
+}
+.wgtSequentialTableLayoutRow{
+
+}
+    

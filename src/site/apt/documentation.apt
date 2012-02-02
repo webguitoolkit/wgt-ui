@@ -1,0 +1,14 @@
+ -----
+ Web GUI Toolkit WGT
+ -----
+ Endress+Hauser
+ -----
+ April 2008
+ 
+Documentation
+ 
+ * {{{docs/plugin.html}Eclipse Plug-In}}
+
+ * {{{docs/snippets.html}Eclipse Snippets}}
+
+ * {{{docs/wizard1.html}Setup a new WGT Project using the WGT Wizard}}  

@@ -1,0 +1,454 @@
+/**********************************************************
+ File: common.css
+***********************************************************
+ general styles for IS GUI Controls
+
+ History:
+ 26.09.06 (Thorsten Springhart) cleanup and reorganization
+ 02.11.06 (Thorsten Springhart) integrate ComboBox Styles
+ 28.09.07 (Thorsten Springhart) added new Tree Styles
+ 14.03.08 (Martin,Arno,Ben,Peter) Merge bb
+***********************************************************/
+
+
+/**********************************************************
+ general Body
+***********************************************************/
+body
+{ 
+	margin-top: 10px;
+	margin-left: 10px;
+	color: #000000;
+}
+
+body, td, th, input, select, textarea, wgtLabelFor
+{ 
+	font-family: arial, helvetica, sans-serif;
+	font-size: 11px !important;
+	/* line-height: 14px; */
+}
+
+/**********************************************************
+ Label
+***********************************************************/
+.wgtLabel {
+}
+
+.wgtLabelFor {
+	/*
+	border-style:solid;
+	border-color: #666666;
+	border-width: 0px 0px 0px 3px;
+	padding-left: 3px;*/
+	font-weight: bold;
+}
+
+.wgtHeadline {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 19px;
+	color: #000000;
+}
+
+.wgtStatus {
+	color: #AAAAAA;
+}
+
+/**********************************************************
+ Combo Box
+***********************************************************/
+.wgtComboResults {
+	padding: 0px;
+	height: 90px;
+	border:	1px solid #999999;
+	background-color: Window;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	scrollbar-base-color:		rgb(234,242,255);
+	scrollbar-highlight-color:	rgb(234,242,255);
+	scrollbar-3dlight-color:	rgb(120,172,255);
+	scrollbar-darkshadow-color:	rgb(120,172,255);
+	scrollbar-shadow-color:		rgb(234,242,255);
+	scrollbar-face-color:		rgb(234,242,255);
+	scrollbar-track-color:		white;
+	scrollbar-arrow-color:		black;
+	z-index: 99999;
+}
+
+.wgtComboResults ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.wgtComboResults li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	width: 100%;
+	font: menu;
+	font-size: 11px;
+	overflow: hidden;
+	/* height: 14px; */
+}
+
+.wgtComboLoading {
+	background : Window url('indicator.gif') right center no-repeat;
+}
+
+.wgtComboOver {
+	background-color: Highlight;
+	color: HighlightText;
+}
+
+.wgtComboMoreItems {
+	text-align: center;
+	background-color: InactiveCaption;
+	color: InactiveCaptionText;
+	margin: 0px;
+	padding: 0px 5px;
+	cursor: default;
+	display: block;
+	width: 100%;
+	font: bold menu 12px;
+	overflow: hidden;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+
+
+
+/**********************************************************
+ Level bar
+***********************************************************/
+
+.wgtPBar {
+	vertical-align: bottom;
+	white-space: nowrap;
+	border: 1px solid;	
+	margin-left: 6px;
+	margin-right: 10px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.wgtPBarTxt {
+	position: absolute;
+	padding-left: 6px;
+	font-size: 0.95em;
+}
+
+.wgtPBarLeft {
+	vertical-align: bottom;
+	background-color:#FF9933; 
+	height: 1.5em;
+}
+
+/**********************************************************
+ Progress bar
+***********************************************************/
+
+.wgtUploadProgressBar {
+}
+
+.wgtUploadProgressBarBox { 
+	width: 200px; 
+	height: 15px; 
+	border: 1px inset; 
+	background: #eee;
+}
+
+.wgtUploadProgressBarBoxContent { 
+	width: 0; 
+	height: 15px; 
+	border-right: 1px solid #444; 
+	background: #FF9933; 
+}
+
+.wgtUploadProgressText{
+	position: absolute;
+    font-size: 0.95em;
+}
+
+/**********************************************************
+ Buttons
+***********************************************************/
+    
+button {
+    border:0; 
+    border:none; 
+    background:transparent; 
+    overflow:visible; 
+    white-space:nowrap; 
+    padding:0 2px 0 2px; 
+    cursor:pointer; 
+    font-size: 11px;
+    margin: 0;
+  }
+    
+button.noback {
+    background: transparent;
+    border:0 none;
+    margin:2px 2px 2px 5px;
+    padding:0px;
+}
+
+button.noback .round .inner {
+    background: transparent;
+    height:auto;
+    padding-left:0px;
+}
+
+button.noback .round {
+    background: transparent;
+    height:auto;
+    padding-left:0; 
+    padding-right:0;
+    line-height:auto;
+}
+
+.wgtButtonBar {
+	padding: 5px;
+}
+
+.wgtMessageButton {
+	background-color:#E9F2FA;
+	border-color:#B8C1CC rgb(48, 48, 71) rgb(48, 48, 71) rgb(184, 193, 204);
+	border-style:solid !important;
+	border-width:1px !important;
+	color:#000000;
+	cursor:pointer;
+	font-weight:normal;
+	padding:0pt 2px 0pt 2px;
+	text-align:center;
+	text-decoration:none;
+	white-space:nowrap;
+	z-index: 500;
+}
+
+/**********************************************************
+ ContextMenu
+***********************************************************/
+.
+.context-menu-item-disabled {
+    color: #CCCCCC !important;  
+}
+
+/**********************************************************
+ Canvas
+***********************************************************/
+.wgtPopup{
+	border: 2px solid #CECECE;
+	background-color: #FFFFFF; 
+}
+
+.wgtPopupWindow {
+	border-color: #666666 #CCCCCC #CCCCCC #666666;
+    border-style: outset;
+    border-width: 1px 2px 2px 1px;
+}
+
+.wgtPopupModal { 
+	background-color: #FFF; 
+	-moz-opacity: 0.5; 
+	/* filter:Alpha(opacity=50);  // removed because of activex alerts in IE*/
+	position: absolute; 
+	top: 0px;
+	left: 0px;
+	width: 100%; 
+	height: 100%; 
+	zIndex: 999;
+}
+
+.wgtCanvasWindowTitelBar {
+	background: url(../images/wgt/window_title.gif) repeat-y top left #FAE8D8;
+	height:18px;
+	padding:0px;
+	margin:0px;
+	width:100%;
+}
+.wgtCanvasWindowButton {
+    margin:2px;
+}
+
+.wgtCanvas{
+}
+
+.wgtCanvasWindowTitel{
+	padding: 0px;
+	margin: 0px;
+	padding-left: 3px;
+	color: #000000;
+	font-weight: bold;	
+}
+
+/* this is an extension to wgtPopup for alertBoxes, see DialogUtil */
+.wgtAlertBox {
+	text-align: center;
+}
+
+#disabledZone {
+    background-color: white;
+    -moz-opacity: 0.5;
+    opacity:.50;
+    filter: alpha(opacity=50);
+    cursor:progress;
+}
+
+div.wgtShadow div.topright {
+	background:transparent url(../images/wgt/shad_trcorner.png) no-repeat scroll right top;
+	height:6px;
+	position:absolute;
+	right:-4px;
+	top:0px;
+	width:4px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.wgtShadow div.content {
+	border: 2px solid #CECECE;
+	background-color: #FFFFFF; 
+	margin: 0px;
+	padding: 0px;
+}
+
+div.wgtShadow div.bottomleft {
+	background:transparent url(../images/wgt/shad_blcorner.png) no-repeat scroll left bottom;
+	bottom:0px;
+	height:6px;
+	left:0px;
+	position:absolute;
+	width:4px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.wgtShadow div.bottomright {
+	background:transparent url(../images/wgt/shad_brcorner.png) no-repeat scroll right bottom;
+	bottom:0px;
+	height:6px;
+	position:absolute;
+	right:-4px;
+	width:5px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wgtCanvasTray{
+    border-bottom: 1px solid #FF9933;   
+    border-left: 1px solid #FF9933;
+    border-right: 1px solid #FF9933;
+    margin-top: 1px;    
+}
+
+.wgtCanvasTrayline{ 
+    background-color: #FF9933;  
+}
+
+.wgtCanvasTraylineTable{
+    width: 100%;
+}
+
+.wgtCanvasTraylineTableCell{
+    color:#FFFFFF;
+    font-weight:bold;
+    padding-left: 3px; 
+}
+
+.wgtCanvasTraybody{
+    width: 100%;
+}
+
+
+/**********************************************************
+ Others
+***********************************************************/
+
+.wgtCalendarButton {
+	cursor:			hand;
+	cursor:			pointer;	
+	margin-top:		0px;
+	padding:	 	0px;
+	vertical-align: top;
+	align:			middle;
+}
+
+* html .wgtCalendarButton {
+	cursor:			hand;
+	cursor:			pointer;	
+	vertical-align: text-bottom;
+}
+
+.wgtColorBox {
+	height: 20px;
+	width: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+}
+
+.wgtPointerCursor {
+	cursor: pointer;
+}
+
+.wgtMessageBox {
+	background-color: white;
+	border: 1px solid #666666;
+	padding: 10px;
+	min-height:50px;
+}
+
+/* and specially for the ie, because min-height isn't supported */
+* html .wgtMessageBox { 
+	height: 50px; 
+}
+
+/**********************************************************
+ Drag Drop
+***********************************************************/
+.wgtDroppableActive {
+	cursor: move;
+}
+.wgtDroppableHover {
+	cursor: pointer;
+	background-color: #F2E1AF;
+	outline: 1px dotted black;
+}
+.wgtDraggable{
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter: alpha(opacity = 50%);
+	background-color: white;
+	padding: 3px 3px 3px 20px;
+	color: #000000;
+}
+
+.wgtButtonBar {
+	background-color:#EEEEEE;
+	border-color:#EEEEEE;
+	border-style:solid;
+	border-width:0 0 1px;
+	padding:2px 0 0;
+	width:100%;
+}
+.messageBox {
+	background-color: white;
+	border: 1px solid #666666;
+	padding: 10px;
+	min-height:50px;
+}
+
+/* and specially for the ie, because min-height isn't supported */
+* html .messageBox { 
+	height: 50px; 
+}
+
+.messageBoxImage {
+	float:left;
+}
+

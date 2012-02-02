@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<properties>
+		<title>Web GUI Toolkit</title>
+		<author email="martin.hermann@infoserve.endress.com">Martin Hermann</author>
+	</properties>
+<!-- 
+The following attributes are supported for the <release> element:
+
+version         Required    Name of the version in which the changes occur. For each change, add a nested <action> element as described below.
+date            Required    Date at which the version was released. You can use a free form comment such as "in SVN" for unreleased versions.
+description     Optional    An optional description of the release. This is used in the overview table of releases. Note: In releases prior to 2.0-beta-2 this was called desc. It was changed to improve compatibility with the Maven 1 changes plugin.
+
+The following attributes are supported for the <action> element:
+
+dev             Required    Name of developer who committed the change. This must be the name of the developer as described in the developers section of the pom.xml file.
+type            Required    Type of change. There are four valid values: add, fix, remove, update.
+issue           Optional    Id of the issue related to this change. This is the id in your issue tracking system.
+                            The Changes plugin will generate a URL out of this id. The URL is constructed using the value of the issueLinkTemplate parameter. See the changes-report mojo for more details.
+due-to          Optional    Name of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
+due-to-email    Optional    Email of the person to be credited for this change.
+
+e.g.
+      <release version="1.2.1" date="2007-05-11" description="Release fix">   
+           <action dev="springhartt" type="fix" issue="1254">
+               Update to stable dwr version 2.0.1
+           </action>
+
+      </release>
+
+ -->
+	<body>
+	 <release version="01.03.17" description="Extensions and bugfixes" date="2012-xx-xx">
+	 	<action dev="sattlera" type="fix" date="2012-01-23">
+            TableExport: regard exportable-flag to exclude certain columns from table export
+        </action>
+	 	<action dev="sattlera" type="add" date="2012-01-23">
+            TableExport: optional export of currently displayed columns only
+        </action>
+	 	<action dev="sattlera" type="add" date="2012-01-23">
+            TableExport: checkbox columns are never exported
+        </action>
+	 	<action dev="sattlera" type="add" date="2012-01-19">
+            TableExport: property.title is exported if column has a PlainHtmlColumnRenderer
+        </action>
+	 	<action dev="sattlera" type="add" date="2012-01-04">
+            Option to show title for checkbox column header
+        </action>
+	   <action dev="sattlera" type="fix" date="2012-01-04">
+            Fixed problems with select-all functionality in checkbox column of table
+        </action>
+     </release>
+	 <release version="01.03.14" description="Bugfixes" date="2011-05-12">
+	   <action dev="sattlera" type="add" date="2011-10-25">
+            Added RegularExpressionListValidator to validate strings against multiple regex-patterns.
+        </action>
+	   <action dev="hermannm" type="fix" date="2011-10-17">
+            Fixed table editor cancel behavior
+        </action>
+      </release>
+	 <release version="01.03.13" description="Bugfixes" date="2011-05-12">
+	   <action dev="klugb" type="add" date="2011-09-30">
+            Added optional Button to Popupselect: Apply and continue
+        </action>
+      </release>
+	 <release version="01.03.12" description="Bugfixes" date="2011-05-12">
+	   <action dev="sattlera" type="add" date="2011-09-23">
+            Added StringAbbreviationConverter
+        </action>
+        <action dev="haugers" type="fix" date="2011-09-23">
+            Corrected partly the replacement of html-tags in ExcelTableExport.
+        </action>
+        <action dev="sattlera" type="add" date="2011-09-08">
+            Added patterns for URL with path and parameters and FTP-URL
+        </action>
+        <action dev="sattlera" type="add" date="2011-07-12">
+            Allow additional buttons on WizardPopup
+        </action>
+        <action dev="hermannm" type="add" date="2011-06-09">
+            Tree: Introduced parameter in expand node function for expanding without listener call
+        </action>
+	    <action dev="sattlera" type="add" date="2011-05-24">
+            Added a getProperties-method to the DataBag-class
+        </action>
+        <action dev="hermannm" type="fix" date="2011-05-04">
+            Fixed select box close in IE
+        </action>
+        <action dev="hermannm" type="fix" date="2011-05-04">
+            Fixed multiple modal popups and disabled layer
+        </action>
+        <action dev="kaiserw" type="fix" date="2011-05-02">
+            Added missing IDs for Buttons in a Popup window.
+        </action>
+        <action dev="kaiserw" type="update" date="2011-05-02">
+            Updated parent POM to version 02.01.01
+        </action>
+     </release>
+	 <release version="01.03.11" description="Bugfixes" date="2011-04-12">
+        <action dev="hermannm" type="fix" date="2011-04-11">
+            Fixed Dropdown: selection of single value with mouse
+        </action>
+        <action dev="hermannm" type="fix" date="2011-04-11">
+            Fixed tree: update of tree script and removed automated listener call on select node
+        </action>
+        <action dev="schatza" type="update" date="2011-04-11">
+            Refactored DataBag handling, own implementations of the interface can now be used by overwriting the WebGuiFactoryies createDataBag method
+        </action>
+	    <action dev="klugb" type="add" date="2011-03-31">
+            New HTML Construction Util added
+        </action>
+	    <action dev="sattlera" type="add" date="2011-03-21">
+            added MandatoryIfVisibleValidator
+        </action>
+	    <action dev="sattlera" type="add" date="2011-03-18">
+            added MaxDateValidator
+        </action>
+        <action dev="kaiserw" type="add" date="2011-02-22">
+            added additional methods/constructors for GUI components which accept IDs as parameters
+        </action>
+	 </release>
+    <release version="01.03.10" description="Bugfixes" date="2011-02-22">
+        <action dev="sattlera" type="add" date="2011-02-18">
+            added getAttributeValue to HtmlElement to read the content of a formerly set attribute
+        </action>
+        <action dev="hermannm" type="add" date="2011-01-17">
+            added a setName method to base control, this can be used for automated frontend tests.
+        </action>
+        <action dev="hermannm" type="add" date="2011-01-14">
+            made simple tooltip changable
+        </action>
+        <action dev="hermannm" type="fix" date="2011-01-14">
+            fixed disabling of link button
+        </action>
+        <action dev="hermannm" type="update" date="2011-01-10">
+            changed table interface, added selectionChange(int row, boolean callListener). Depreciated selectionChange(int row) and callListenerSelectRow(int row)
+        </action>
+        <action dev="klugb" type="fix" date="2011-01-07" issue="1655">
+            Take care scrolling position when center div. (Popup)
+        </action>
+        <action dev="klugb" type="fix" date="2011-01-04" issue="1109">
+            Table: Disable select-all column in PDF export
+        </action>
+        <action dev="klugb" type="fix" date="2011-01-04" issue="988">
+            PopupSelect: Disable onRowSelection when scrolling in PopupSelect.
+        </action>
+        <action dev="hermannm" type="fix" date="2010-12-16">
+            Added constructor with component id in TextSuggest for backward compatibility.
+        </action>
+        <action dev="hermannm" type="fix" date="2010-12-09">
+            Bugfix in Table: Added select script to page when table has tableFilters
+        </action>
+        <action dev="hermannm" type="fix" date="2010-12-08">
+            Bugfix in AbstractTablebasedLayout: handling of row CSS class
+        </action>
+    </release>
+	<release version="01.03.09" description="Bugfixes" date="2010-12-03">
+	  	<action dev="kaiserw" type="update" date="2010-11-24">
+            Updated parent POM to version 02.01.00
+        </action>
+        <action dev="muellerd" type="fix" date="2010-11-18">
+            ExportServlet: Slashes in Sheetname are not allowed, e.g. "Planned deliveries / disposals" did throw IllegalArgumentException. --> catch Exception and set 'Sheet1' as default.
+        </action>
+        <action dev="klugb" type="fix" date="2010-11-09">
+            Fix for tables not editable
+        </action>	
+        <action dev="klugb" type="fix" date="2010-10-19">
+            Allow Popupselect without describing label using the factory
+        </action>	
+	</release>
+    <release version="01.03.08" description="Bugfixes" date="2010-09-30">
+        <action dev="klugb" type="add" date="2010-09-14">
+            New attribute for textareas to control the max. length. This will be monitored by JS 
+        </action>
+        <action dev="klugb" type="fix" date="2010-09-14">
+            Adjusted number of possible characters in a Textarea unsing Antisamy configuration 
+        </action>
+        <action dev="sattlera" type="fix" date="2010-09-13">
+            Fixed error on PDF-Table-Export if table was empty  
+        </action>
+        <action dev="sattlera" type="fix" date="2010-08-23">
+            Fixed IndexOutOfBoundsException using scroll-buttons on empty tables  
+        </action>
+        <action dev="hermann" type="update" date="2010-08-10">
+            Updated DWR to latest version
+        </action>
+        <action dev="hermann" type="fix" date="2010-08-10">
+            Refactored resource servlet:
+            - Better Caching
+            - Static flag for sending one big script file
+            - Added some debug info
+        </action>
+        <action dev="klugb" type="fix" date="2010-08-10">
+            Fixed drag and drop between tree and table
+        </action>
+        <action dev="hermannm" type="fix" date="2010-08-24">
+            Some bugs in MasterDetailFactory and Wizard
+        </action>
+        <action dev="hermannm" type="add" date="2010-08-24">
+            Validate method in compound
+        </action>
+        <action dev="hermannm" type="add" date="2010-08-24">
+            Session debug filter for some informations about session and the time spend on server.
+        </action>
+    </release>
+	<release version="01.03.07" description="Bugfixes" date="2010-XX-XX">
+	  	<action dev="kaiserw" type="update" date="2010-07-29">
+            Updated parent POM to version 02.00.12
+        </action>
+		<action dev="klugb" type="fix" date="2010-07-22">
+			PopupSelect fires action event on object remove/clear now
+		</action>	
+		<action dev="klugb" type="fix" date="2010-07-21">
+			PopupSelect improvements (TableConfig)
+		</action>	
+	</release>
+	<release version="01.03.06" description="Bugfixes" date="2010-07-16">
+		<action dev="breiningf" type="update" date="2010-07-16">
+			if the file is not allowed to download write the file name to log
+		</action>
+		<action dev="klugb" type="fix" date="2010-07-14">
+			removed fix ID from PopupSelect Table
+		</action>	
+	</release>
+	 <release version="01.03.05" description="Bugfixes" date="2010-07-XX">
+       <action dev="kaiserw" type="update" date="2010-07-05">
+           Update Über-POM to version 02.00.11 (fix for commons-beanutils dependency). New Apache commons libraries are used as well.
+       </action>
+       <action dev="kaiserw" type="update" date="2010-07-05">
+           Update jfreechart version - use same version for different dependencies.
+       </action>
+     </release>
+	 <release version="01.03.05" description="Bugfixes" date="2010-XX-XX">
+       <action dev="muellerd" type="fix" date="2010-06-15">
+            Page - Nullpointer when no scripts are in session
+        </action>
+       <action dev="muellerd" type="fix" date="2010-06-07">
+            Page - JS-escape waitMessage and sessionExpiredMessage
+        </action>
+       <action dev="muellerd" type="fix" date="2010-06-02">
+            AbstractButtonBarListener - onDelete: if delete returns false then immediately return
+        </action>
+       <action dev="hermannm" type="add" date="2010-06-01">
+            Minimized js scripts
+       </action>
+	   <action dev="hermannm" type="add" date="2010-05-19">
+            added grid control, (not final)
+        </action>
+	   <action dev="hermannm" type="update" date="2010-05-19">
+            Updated to new jQuery version 1.4 and new jQuery.ui 1.8.1
+        </action>
+	   <action dev="sattlera" type="add" date="2010-05-12">
+            New POI-version for Excel-export
+        </action>
+	 	<action dev="klugb" type="add" date="2010-04-30">
+            ITree supports clickfolderMode now for the jQuery implementation
+        </action>	 
+	 	<action dev="klugb" type="add" date="2010-04-29">
+            TreeNodeHandler can now identify objects by a class and a property 
+        </action>	 
+	 	<action dev="salhit" type="add" date="2010-04-24">
+            Allow Login mask, Popup select and ConfirmationDialog to have own IDs
+        </action>
+     </release>
+	 <release version="01.03.04" description="Bugfixes" date="2010-04-23">
+        <action dev="muellerd" type="fix" date="2010-04-23">
+            Right align for NumberConverterPrecise (like normal NumberConverter)
+        </action> 
+        <action dev="hermannm" type="fix" date="2010-04-23">
+            Added content type to FileUpload response
+        </action> 
+        <action dev="muellerd" type="fix" date="2010-04-22">
+            imprecise Float problem in NumberConverter --> added NumberConverterPrecise using Double
+        </action> 
+	 	<action dev="springhartt" type="fix" date="2010-04-12">
+            case insensitive search for umlaute in table inline filter
+        </action> 
+	 	<action dev="hermannm" type="fix" date="2010-04-01">
+            Allow buttons in ButtonBar to have own IDs
+        </action> 
+		<action dev="hermannm" type="fix" date="2010-03-31">
+            Null in context is now ignored and throws not an JS exception
+        </action> 
+		<action dev="hermannm" type="fix" date="2010-03-31">
+            LinkButtonColumnRenderer fixed for non static links
+        </action> 
+		<action dev="hermannm" type="fix" date="2010-03-31">
+            Context menu on tables are now just on the cells that are displayed.
+        </action> 
+		<action dev="hermannm" type="fix" date="2010-03-31">
+            Context menu width bug in IE 8 fixed
+        </action> 
+		<action dev="hermannm" type="fix" date="2010-03-26">
+            DatePicker and Converter fixed four letter year is now default
+        </action> 
+		<action dev="klugb" type="add" date="2010-03-17">
+            IRichTextarea introduced
+        </action> 
+	 </release>
+	 <release version="01.03.03" description="Bugfixes" date="2010-03-16">
+	  	<action dev="kaiserw" type="update" date="2010-02-12">
+            Updated compiled classes to JDK 1.6
+        </action>
+	  	<action dev="kaiserw" type="update" date="2010-02-12">
+            Updated parent POM to version 02.00.09-SNAPSHOT
+        </action>
+	  	<action dev="kaiserw" type="update" date="2010-02-12">
+            Updated versions of dependent libraries - remove most version numbers to be inherited from parent POM.
+        </action>
+        <action dev="hermannm" type="fix" date="2010-03-09">
+            added tooltip for tree node
+        </action> 
+		<action dev="weinschenkt" type="add" date="2009-03-08">
+            Added getter for the ExportOptions to ITable
+        </action> 
+        <action dev="hermannm" type="fix" date="2010-02-18">
+            Multiple message boxes don't cause error messages anymore
+        </action> 
+		<action dev="sattlera" type="add" date="2009-02-09">
+            localized session expired message
+        </action> 
+		<action dev="sattlera" type="add" date="2009-02-09">
+            display optimization in export of table columns with CollectionToStringRenderer
+        </action> 
+		<action dev="sattlera" type="fix" date="2009-02-09">
+            performance improvement on loading javascripts
+        </action> 
+	 </release>
+	 <release version="01.03.02" description="Bugfixes" date="2010-02-04">
+           <action dev="hermannm" type="fix" date="2010-01-15">
+                 Made all objects serialisable
+            </action> 
+           <action dev="hermannm" type="add" date="2010-01-15">
+                 Added tooltip to ButtonColumnRenderer and ImageColumnRenderer
+            </action> 
+	 </release>
+	  <release version="01.03.01" description="Bugfixes" date="2010-01-12">
+	  	    <action dev="sattlera" type="add" date="2010-02-03">
+                  Updated parent POM to version 02.00.07
+            </action> 
+	        <action dev="sattlera" type="add" date="2009-12-15">
+                  new ColumnRenderer called CollectionToStringRenderer, that combines the items of a Collection to a single String which can be displayed in a table cell
+             </action> 
+	         <action dev="hermannm" type="fix" date="2009-12-06">
+                  	refactored loading of java script files.
+             </action>  
+	         <action dev="hermannm" type="fix" date="2009-12-06">
+                  	fixed close image location
+             </action>  
+	         <action dev="klugb" type="fix" date="2009-11-27">
+                  	Optimization of PDF Export (100% width, print title of images instead of path)
+             </action>  
+			<action dev="klugb" type="fix" date="2009-11-15">
+                  Datepicker language file fixed Turkish, Czech, Hungarian and Greek
+             </action>   
+	 </release>
+        <release version="01.03.00" description="Bugfixes" date="2009-11-06">
+             <action dev="klugb" type="fix" date="2009-11-03">
+                  Korean Datepicker language file fixed
+             </action>          
+             <action dev="hermannm" type="add" date="2009-10-29">
+                  New Tab implementation ButtonTabStrip
+             </action>          
+             <action dev="hermannm" type="fix" date="2009-10-29">
+                  Refactored Tabs and interfaces
+             </action>          
+             <action dev="broesslerl" type="add" date="2009-10-22">
+                  Added setTableDisplayMode and setTableEditable to PopupSelect, PopupSelectModel and Popup
+                  Default value of tableEditable is false  
+             </action>        
+             <action dev="sattlera" type="add" date="2009-10-21">
+                  Extended TextService: getString-method can take both, explicit Locale and parameters  
+             </action>
+             <action dev="hermannm" type="add" date="2009-10-13">
+                  Added new layout for Compounds with ButtonBars
+             </action>          
+             <action dev="klugb" type="add" date="2009-09-29">
+                  Added new column renderer: LinkButtonColumnRenderer
+             </action>          
+             <action dev="hermannm" type="remove" date="2009-09-09">
+                  Removed E+H dependencies, moved them to the WebGuiToolkitEH Project 
+             </action>  
+        </release>
+		<release version="01.02.01" description="Bugfixes" date="2009-09-08">
+		     <action dev="sattlera" type="add" date="2009-09-07">
+                  Optional highlighting of Menu. 
+             </action>  
+             <action dev="hermannm" type="fix" date="2009-09-02">
+                  Handle Popup Blocker error. 
+             </action>  
+             <action dev="hermannm" type="fix" date="2009-09-02">
+                  Fixed handling of style in the textarea. 
+             </action>  
+			<action dev="sattlera" type="add" date="2009-08-14">
+                  Added DataBagBooleanPropertyComparator to sort collections by a property of type Boolean. 
+             </action>			
+			<action dev="broesslerl" type="add" date="2009-08-13">
+                  EnumerationSelectModel from WGT 1.5 extension
+             </action>             
+             <action dev="hermannm" type="add" date="2009-08-03">
+                  Added getter to the buttonbar default-buttons. Now it is possible to change the attributes of the buttonbar buttons
+             </action>
+             <action dev="broesslerl" type="add" date="2009-08-03" >
+                added menuItem factory methods. now it is possible to add menuItems directly to the menuBar
+             </action>             
+             <action dev="hermannm" type="update" date="2009-07-31">
+                  Moved to jdk 1.5
+             </action>
+             <action dev="hermannm" type="remove" date="2009-07-31">
+                  removed base path as url parameter due to security issues!
+             </action>
+             <action dev="hermannm" type="add" date="2009-07-31">
+                  New XSS Filter
+             </action>
+             <action dev="hermannm" type="add" date="2009-07-31">
+                  OptionGroupController for managing RadioButtons and CheckBoxes in a Compound
+             </action>
+             <action dev="hermannm" type="add" date="2009-07-31">
+                  New XSS Filter
+             </action>
+             <action dev="klugb" type="fix" date="2009-07-28">
+                  Fixed US dateformat for DatePicker
+             </action>
+             <action dev="sattlera" type="add" date="2009-07-28">
+                  Added new validator: MinMaxLengthValidator
+             </action>
+             <action dev="broesslerl" type="fix" date="2009-07-28" issue="519">
+                  default css is now set with the setCssClass() instead with stdParameter. 
+                  this fixes the issue #519
+             </action>
+             <action dev="klugb" type="fix" date="2009-07-24">
+                  Checkbox-Colums in ITable set to mandatory
+             </action>
+             <action dev="klugb" type="fix" date="2009-07-23">
+                  download of table pdf/excel enabled for IE>6
+             </action>
+             <action dev="springhartt" type="add" date="2009-07-23">
+                  clickable header in trayable canvas
+             </action>
+             <action dev="hermannm" type="add" date="2009-07-23">
+                  Added mandatory flag in table column
+             </action>
+             <action dev="hermannm" type="add" date="2009-07-23">
+                  Added row count to table configuration
+             </action>
+             <action dev="hermannm" type="add" date="2009-07-23">
+                  Fixed Button added return key as action
+             </action>
+	         <action dev="zaretzkep" type="add" date="2009-07-08">
+                  Enhancements of the SortedList control. Added drag and drop between list.
+             </action>
+         </release>  
+        <release version="01.02.00" description="Bugfixes" date="2009-07-03">
+       		<action dev="sattlera" type="fix" date="2009-07-07"> 
+                Catched NumberFormatException in PositiveNumberValidator.
+            </action>
+       		<action dev="sattlera" type="add" date="2009-06-29"> 
+               Added a "minimum value" check to IntegerValidator.
+            </action>
+            <action dev="broesslerl" type="add" date="2009-06-22"> 
+                Added factory methodes for TextSuggest to the WebGuiFactory.
+                e.g. createTextSuggest(IComposite parent, String property, String url)
+                	 createTextSuggest(IComposite parent, String property, String url, Label currentLabel, String id )
+            </action>
+            <action dev="sattlera" type="fix" date="2009-06-19"> 
+                Disabled-state was not correctly mapped. Updated button implementation adding an 
+                isDisabled-method to each implementation and turning isDisabled of the super class
+                to abstract.
+            </action>
+            <action dev="broesslerl" type="fix" date="2009-06-18" issue="463"> 
+                Refactored listener interfaces and abstract classes to use interfaces instead of
+                concrete instances.
+                The new version is therefore not downward compatible!
+            </action>    
+            <action dev="broesslerl" type="fix" date="2009-06-18" issue="463"> 
+           		Defect #463 fixed. addCssClass() now adds an additional style class to the 
+           		table. To overwrite an existing style class use setCssClass()
+            </action>    
+            <action dev="broesslerl" type="fix" date="2009-06-10"> 
+            	When using validators in a table, error messages will stack up and do not clear.
+            	Added clearErrors()   to save2Bag Method to prevent this from happening. 
+            </action> 
+            <action dev="broesslerl" type="update" date="2009-06-10"> 
+                Added additional constructor to the MaxLenthValidator. Now it is possible to set own language dependent 
+                error messages.
+            </action>
+            <action dev="hermannm" type="fix" date="2009-05-26"> 
+                New Tree implementation JQueryTree, there for I changed the interface ITreeListener this will cause 
+                compiler errors in implementing classes, but it is easy to fix, just change the parameter Tree 
+                to ITree
+            </action>
+        </release>
+        <release version="01.01.00" description="Bugfixes" date="2009-05-14">
+            <action dev="klugb" type="fix" date="2009-05-15" > 
+                Performance Issue of GlossButton an related controls solved
+            </action>        
+            <action dev="hermannm" type="fix" date="2009-05-14"> 
+                disable buttons didn't work in IE
+            </action>
+            <action dev="hermannm" type="fix" date="2009-05-14"> 
+                Fixed context menu in tree
+            </action>
+            <action dev="hermannm" type="fix" date="2009-05-13"> 
+                Fixed tables, removed bug from TableColumn refactoring
+            </action>
+            <action dev="hermannm" type="fix" date="2009-05-13"> 
+                Fixed language files for calendar
+            </action>
+            <action dev="hermannm" type="fix" date="2009-05-12"> 
+                Removed TableColumn from constructor of ColumnRenderers 
+            </action>
+            <action dev="hermannm" type="fix" date="2009-05-11" issue="256"> 
+                TabelFilter loose value after redraw fixed! 
+            </action>
+			<action dev="broesslerl" type="fix" date="2009-05-08" issue="185"> 
+                The advanced tooltip vanishes when using filter or order functions of the table. This behaviour is now fixed!
+            </action>
+            <action dev="broesslerl" type="fix" date="2009-05-08" issue="240"> 
+                Now a DefaultRenderer can be assigned to a table. It will be used one every column which has no renderer explicitly assigned
+            </action>
+            <action dev="klugb" type="add" date="2009-05-05" issue="229"> 
+                 Highlighting of FormControls with error.
+            </action>  		
+            <action dev="hermannm" type="fix" date="2009-04-29" issue="225"> 
+                 removed all context elements for a control from the server and client context, 
+                 this should fix issues with manual id setting and closes a potential memory leak.
+            </action>           
+            <action dev="hermannm" type="fix" date="2009-04-28" issue="231"> 
+                 refactored resource keys for converter and validators
+            </action>           
+            <action dev="hermannm" type="add" date="2009-04-28" issue="231"> 
+                 Generated a WGT resource Bundle where all Resources of the WGT are included. It is loaded to the Translation tool on isw108.
+                 http://isw108.infoserve.endress.com:8080/TranslationTools/
+            </action>           
+			<action dev="springhartt" type="fix" date="2009-04-28"> 
+				 adjust default filter mapping to ignore dwr js files
+			</action>			
+			<action dev="springhartt" type="update" date="2009-04-27"> 
+				 change tab rendering
+			</action>					
+			<action dev="klugb" type="fix" date="2009-04-27" issue="263"> 
+				 Use Columnconfig (renderer and converter) for inline filtering
+			</action>			
+			<action dev="klugb" type="fix" date="2009-04-27" issue="250"> 
+				 Disable Table.sort() for columns not sortable, added method for sorting by a column by its name
+			</action>		
+			<action dev="klugb" type="fix" date="2009-04-21"> 
+				 Inline Table Filter for IE fixed. Event is stopped after filtering.
+			</action>
+			<action dev="sattlera" type="fix" date="2009-04-21"> 
+				 Allow value 0 for tabIndex 
+			</action>					
+			<action dev="klugb" type="fix" date="2009-04-08">
+				Fixed table export buttons for IE</action>			
+			<action dev="klugb" type="fix" date="2009-04-07">
+				Changed edit mode for PopupSelect</action>		
+			<action dev="klugb" type="fix" date="2009-04-06">
+				Fix for using table filters in PopupSelect</action>
+			<action dev="zaretzkep" type="add" issue="187" date="2009-03-30">
+				Introduction of Interfaces for all Controls with a minimum set of
+				methods. Factory returns Interfaces.</action>
+			<action dev="hermannm" type="fix" issue="127" date="2009-04-01"> fixed
+				button layout on IE</action>
+		</release>
+		<release version="01.00.05" description="Bugfixes and enhancements"
+			date="2009-03-31">
+			<action dev="broesslerl" type="fix" date="2009-03-30"> Fixed excel sheet
+				name length bug in Export Servlet</action>
+			<action dev="klugb" type="add" issue="218" date="2009-03-30"> Optionally
+				disable backspace button (IE and FF) by including
+				preventBackspaceBack.js</action>
+			<action dev="hermannm" type="fix" issue="137" date="2009-03-30"> reloading
+				children when there is no child left works now, it is needed after
+				removing the last child from a node.</action>
+			<action dev="hermannm" type="fix" date="2009-03-27"> added margin-right to
+				buttons</action>
+			<action dev="hermannm" type="update" date="2009-03-27"> rendered export
+				buttons in table as button group</action>
+			<action dev="springhartt" type="add" issue="128" date="2009-03-27"> render
+				tab properly to fix min-height issue</action>
+			<action dev="hermannm" type="fix" date="2009-03-26"> MandatoryValidator in
+				ValidatiorUtil was initialized statically with the TextService for
+				the errormsg. That has lead to non user dependent local in the error
+				message. Removed the TextService in the constructor because the
+				translation is also done in the compounds validation.</action>
+			<action dev="hermannm" type="fix" date="2009-03-26"> There was a bug in the
+				sorting after changing column config. After removing a column that
+				was left of the sorted column the wrong column was sorted (it was
+				based on the index of the column). fixed sorting of tabele, on first
+				click on one the same column sort smallest first then alternate.
+			</action>
+			<action dev="hermannm" type="update" date="2009-03-26"> new column header
+				style (image can be found in the webresources)</action>
+			<action dev="hermannm" type="add" issue="243" date="2009-03-26"> added
+				heightlighting of sorted colum and sort icons that indicate the
+				direction of sorting. Attention: You have to get the newest icons
+				from the WGT.</action>
+			<action dev="hermannm" type="add" date="2009-03-26"> The webresources
+				(common-includes) can now be found in the repository as an artifact
+				of the WGT with the classifier "webresources". You can easily
+				download them by specifying the WGT artifact in the projects pom but
+				you have to copy the resources to the WebRoot folder by hand.
+			</action>
+			<action dev="hermannm" type="add" date="2009-03-26"> added
+				buttonDisplayMode to ButtonBar. Possible values are image only, text
+				only and image with text. The flag has to be set before specifying
+				the buttons to be displayed.</action>
+			<action dev="hermannm" type="add" date="2009-03-25"> added icon button for
+				displaying simple icons</action>
+			<action dev="hermannm" type="update" issue="127" date="2009-03-25"> Changed
+				Button implementation NiceButton is now StandardButton, the old
+				NiceButton is now depricated</action>
+			<action dev="hermannm" type="fix" issue="170" date="2009-03-24"> fixed
+				select control (also table filter #167), that the promt is displayed
+				when the values have been loaded.</action>
+			<action dev="hermannm" type="fix" issue="224" date="2009-03-23"> fixed load
+				function when table is empty</action>
+			<action dev="hermannm" type="fix" date="2009-03-22"> fixed file upload, the
+				empty.html for the hidden IFrame is now provided by the wgt
+				resources</action>
+			<action dev="springhartt" type="add" issue="134"> enable buttons to
+				open a normal link (optional in new window)</action>
+			<action dev="springhartt" type="add"> add doGet() to Context analog
+				to doPost()</action>
+			<action dev="broesslerl" type="add"> added PDFEvent class which is
+				responsible for e.g. creating header and footer on all pdf export
+				pages. The events are open for improvements</action>
+			<action dev="weinschenkt" type="fix"> fixed problems with date time
+				picker and 12hour locales</action>
+			<action dev="broesslerl" type="add"> added an additional
+				setTabindexPredecessor Method to the FormControl</action>
+			<action dev="broesslerl" type="add"> added a constructor to the
+				DateConverter in the ConverterUtil so that a date format can be set
+				manually</action>
+			<action dev="broesslerl" type="fix"> Selectbox close problem when
+				clicking into another selectbox input field</action>
+			<action dev="broesslerl" type="add"> added constructor for excel
+				export with date format pattern (works for excel export only) added
+				converter user for date object in the pdf export pdf and excel
+				export functions parses br-TAGs from headlines and date and replaces
+				them with a slash. URLEncoding ISO-8859-15 for header and footer
+				information for pdf/excel export</action>
+			<action dev="klugb" type="add"> Result table in PopupSelect can be
+				configured using the setTableConfig(String) method in the PopupModel
+				(optional).</action>
+		</release>
+		<release version="01.00.04" description="Bugfixes and enhancements"
+			date="2009-03-13">
+			<action dev="hermannm" type="fix"> many things</action>
+			<action dev="klugb" type="fix"> also many things</action>
+			<action dev="broesslerl" type="add"> added tabindex to html form
+				elements like Text, Radio, Checkbox, Select, TextSuggest, Textarea
+				and all kinds of buttons</action>
+			<action dev="broesslerl" type="fix"> advanced tooltip and radio
+				buttons initial value bug is fixed</action>
+		</release>
+		<release version="1.0.0" date="2008-09-09" description="Firts released Version">
+			<action dev="hermannm" type="fix"> Fixed table package structure
+				moved rendere in the table.renderer package</action>
+			<action dev="hermannm" type="add"> Added popup view for easily
+				creating popups</action>
+			<action dev="hermannm" type="fix"> Fixed AbstractView, changed
+				method signature of generateControls(), fixed call of show when the
+				viewConnector is not drawn</action>
+			<action dev="hermannm" type="fix"> Fixed Select, removed most of the
+				dependencies to the AssociationSelectModel and Implemented a
+				Converter in the AssociationSelectModel. When using the ASModel you
+				don't have to add a ".id" to the property now. The functions
+				getAssociatedObject() and setAssociatedObject() were replaced by
+				getValueAsObject() and setValueAsObject() This changes were
+				necessary for implementing a new SelectModel called
+				EnumerationSelectModel found in the WebGuiToolkit_Java_15 project
+				that can easily build a Select for Enum Values.</action>
+		</release>
+		<release version="0.9.2" date="2008-05-29"
+			description="Fixes and added accordeon, multiselect and permission manager">
+			<action dev="hermannm" type="fix"> Context Menu fix, there was a
+				problem when displaying more then one context menus on one view.
+				Also fixed that context menus will be removed from DOM when the
+				Control is deleted in the backend</action>
+			<action dev="klugb" type="add"> Added accordeon</action>
+			<action dev="klugb" type="add"> Added multiselect</action>
+			<action dev="hermannm" type="add"> Added PermissionManager as
+				generic interface for controls to decide if the control is rendered
+				and if the control is executable. The rendering of the controls has
+				to be modified to display the controls in read only mode if there
+				are no edit rights.</action>
+		</release>
+		<release version="0.9.1" date="2008-14-04" description="Firts released Version">
+		</release>
+	</body>
+</document>

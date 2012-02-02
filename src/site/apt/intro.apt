@@ -1,0 +1,28 @@
+ -----
+ Web GUI Toolkit WGT
+ -----
+ Endress+Hauser
+ -----
+ April 2008
+ 
+Introduction
+
+ Goals:
+ 
+ * Same look and feel (Style Guide)
+ 
+ * Easy communication between frontend (Browser) and backend (Server)
+ 
+   * The framework uses DWR as AJAX framework
+   
+ * Fast development of GUIs
+ 
+ * Extendible and flexible framework
+ 
+   * you can write your own controls
+
+
+* Overview
+
+ Programming with the WGT means that you don't need to know anything about HTML. ...
+ 

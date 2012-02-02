@@ -1,0 +1,27 @@
+/**********************************************************
+ WGT List
+***********************************************************/
+.wgtList {
+}
+
+.wgtListItem {
+}
+
+.wgtSortableList {
+    list-style-type: none;
+    margin: 1;
+    padding: 5;
+    background-color: #EEEEEE
+}
+
+.wgtSortableListItem {
+    margin: 2px 2px 2px 2px;
+    padding: 0.4em;
+    padding-left: 1.5em;
+    background: #F5F7F9;
+    cursor: move
+}
+
+.wgtSortableListDisabled LI.wgtSortableListItem {
+    cursor: default
+}

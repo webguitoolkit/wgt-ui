@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faqs title="Frequently Asked Questions" toplink="false">
+
+  <part id="general">
+    <title>General</title>
+
+    <faq id="whats-wgt">
+      <question>
+        What is the WGT?
+      </question>
+      <answer>
+      	<p>WGT means Web GUI Toolkit.<br/>
+      	It is a toolkit to simplify web 2.0 development</p>
+      </answer>
+    </faq>
+
+    <faq id="update-manager">
+      <question>
+        Is there an eclipse plugin?
+      </question>
+      <answer>
+        <p>Yes, it can be found via the eclipse update manager</p>
+        <source>http://is207.infoserve.endress.com:8080/WebGuiToolkit/update</source>
+      </answer>
+    </faq>
+  </part>
+
+  <part id="install">
+
+    <title>Getting started</title>
+
+    <faq id="new-project">
+      <question>
+        How to create a new project using WGT?
+      </question>
+      <answer>
+        <p>The easiest way is to use the eclipse plugin and call "File - New - Project... - WGT Wizards - WGT Project Wizard"</p>
+        <p>If You use MyEclipse, You just have to add "Web Project Capabilities"</p>
+      </answer>
+    </faq>
+
+  </part>
+
+</faqs>

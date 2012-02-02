@@ -1,0 +1,33 @@
+<project name="The WGT Project">
+	<publishDate position="navigation-bottom" format="MM-dd-yy"/>
+	<bannerLeft>
+    	<name>WGT</name>
+    	<src>images/logo.gif</src>
+  	</bannerLeft>
+
+	<poweredBy>
+    	<logo name="Maven" href="http://maven.apache.org/"
+    		img="http://maven.apache.org/images/logos/maven-feather.png"/>
+    </poweredBy>
+  	<body>
+	    <links>
+	      <item name="Endress+Hauser" href="http://www.endress.com/" />
+	    </links>
+
+	    <menu name="Project">
+	      <item name="Project info" href="intro.html"/>
+	      <item name="Download" href="download.html"/>
+	      <item name="FAQ" href="faq.html"/>
+	      <item name="Sample" href="http://isw600.infoserve.endress.com:8080/webguitoolkit-pattern/"/>
+          <item name="Wiki" href="http://isw600.infoserve.endress.com/wgtwiki/"/>
+          <item name="Blog" href="http://isw600.infoserve.endress.com/blog/"/>
+	    </menu>
+    	<menu ref="modules" />
+    	<menu ref="reports" />
+  	</body>
+  	
+	<skin>
+	    <groupId>org.apache.maven.skins</groupId>
+	    <artifactId>maven-classic-skin</artifactId>
+	</skin>
+</project>

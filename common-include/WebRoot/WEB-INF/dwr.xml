@@ -1,0 +1,28 @@
+<!DOCTYPE dwr PUBLIC
+  "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+  "http://www.getahead.ltd.uk/dwr/dwr20.dtd">
+<dwr>
+  <allow>
+    <create creator="new" javascript="DWRCaller">
+    <!--  ContextElement[] event(String source, String type, ContextElement[] context)
+    -->
+      <param name="class" 
+        value="org.webguitoolkit.ui.ajax.DWRCallback"/>
+      <include method="event"/> 
+    </create> 
+    <!--  public class ContextElement {
+    String cssId;
+    String value;
+    String type;
+    String status;
+    -->
+    <convert converter="bean" 
+      match="org.webguitoolkit.ui.ajax.ContextElement">
+      <param name="include" 
+        value="cssId,value,type,status"/>
+    </convert>
+    <convert match="java.lang.Exception" converter="exception">
+	    <param name='include' value='message,cause'/>
+    </convert>
+  </allow>
+</dwr>
