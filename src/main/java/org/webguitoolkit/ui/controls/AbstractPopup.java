@@ -121,6 +121,10 @@ public abstract class AbstractPopup extends AbstractView {
 		this.windowActionListener = windowActionListener;
 	}
 	
+	public ICanvasWindowListener getWindowActionListener() {
+		return this.windowActionListener;
+	}
+
 	/**
 	 * closes the popup and removes the components from the tree
 	 */
