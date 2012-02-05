@@ -66,6 +66,15 @@
 				<role>Developer</role>
 			</roles>
 		</developer>
+			<developer>
+			<id>zaretzkep</id>
+			<name>Peter Zaretzke</name>
+			<email>peter@17sprints.de</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>17sprints GmbH</organization>
+		</developer>
 	</developers>
 
 	<properties>
@@ -86,14 +95,17 @@
 		<prop.java.targetversion>1.5</prop.java.targetversion>
 	</properties>
 
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/webguitoolkit/wgt-ui/issues</url>
+	</issueManagement>
+
 	<scm>
-		<connection>scm:svn:http://isw600.infoserve.endress.com/svn/Commons/WebGuiToolkit/trunk/WebGuiToolkit</connection>
-		<developerConnection>scm:svn:http://isw600.infoserve.endress.com/svn/Commons/WebGuiToolkit/trunk/WebGuiToolkit</developerConnection>
-		<url>http://isw600.infoserve.endress.com/svn/Commons/WebGuiToolkit/trunk/WebGuiToolkit</url>
+		<connection>scm:git:git@github.com:webguitoolkit/wgt-ui.git</connection>
+		<developerConnection>scm:git:git@github.com:webguitoolkit/wgt-ui.git</developerConnection>
+		<url>git@github.com:webguitoolkit/wgt-ui.git</url>
 	</scm>
-	<!-- <scm> <connection>http://webguitoolkit.googlecode.com/svn/trunk</connection> 
-		<developerConnection>https://webguitoolkit.googlecode.com/svn/trunk</developerConnection> 
-		<url>http://webguitoolkit.googlecode.com/svn/trunk/</url> </scm> -->
+
 
 	<build>
 		<plugins>
@@ -152,9 +164,9 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.endress.infoserve.commons.maven</groupId>
-				<artifactId>project-template-dependencies</artifactId>
-				<version>02.01.01</version>
+				<groupId>org.webguitoolkit.maven</groupId>
+				<artifactId>wgt-project-template-dependencies</artifactId>
+				<version>01.00.00</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -166,64 +178,82 @@
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 		</dependency>
+
+		<!-- dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency-->
+		
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>jfree</groupId>
 			<artifactId>jfreechart</artifactId>
 			<version>1.0.9</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.jdom</groupId>
 			<artifactId>jdom</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>uk.ltd.getahead.dwr</groupId>
 			<artifactId>dwr</artifactId>
 			<version>2.0.6</version>
 		</dependency>
+
 		<dependency>
 			<groupId>ecs</groupId>
 			<artifactId>ecs</artifactId>
 			<version>1.4.3</version>
 		</dependency>
+
 		<dependency>
 			<groupId>jfree</groupId>
 			<artifactId>jcommon</artifactId>
 			<version>1.0.9</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.6</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
 			<version>2.1.2u</version>
 		</dependency>
+
 		<dependency>
 			<groupId>antisamy</groupId>
 			<artifactId>antisamy-bin</artifactId>
 			<version>1.3</version>
 			<optional>false</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jsr173_api</artifactId>
 			<version>1.0</version>
 		</dependency>
+
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<optional>false</optional>
 		</dependency>
+
 	</dependencies>
 
 	<reporting>
