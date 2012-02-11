@@ -1,7 +1,7 @@
 The WebGuiToolkit (WGT) makes programming rich web applications with Java as simple as client-side programming. 
 You don’t have to code JavaScript, XMl, HTML, CSS and so forth. WGT is a framework where you code your web application 
 like a desktop application with Swing or SWT. It is mature – we have been using it for quite a while for our professional 
-web development 
+web development. 
 
 License:
 
