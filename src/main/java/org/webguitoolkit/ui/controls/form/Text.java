@@ -47,7 +47,7 @@ import org.webguitoolkit.ui.http.resourceprocessor.JSResourceProcessor;
  */
 public class Text extends FormControl implements IText {
 
-	public static final String DOT_BUTTON = ".button";
+	public static final String DOT_BUTTON = "_button";
 	// size of the input box on the screen
 	protected int size;
 	// maxlength of the input
@@ -250,11 +250,14 @@ public class Text extends FormControl implements IText {
 
 	protected String buttonHTML() {
 		IContext ctx = getContext();
-		String buttonVis = getId() + DOT_BUTTON + IContext.DOT_VIS;
-
-		ctx.add(buttonVis, "true", IContext.TYPE_VIS, IContext.STATUS_NOT_EDITABLE);
+		String idVis = getId() + DOT_BUTTON + IContext.DOT_VIS;
+		String stringVis = "";
+		if( !ctx.processBool(idVis) ){
+			stringVis = "display: none;";
+		}
+//		ctx.add(buttonVis, "true", IContext.TYPE_VIS, IContext.STATUS_NOT_EDITABLE);
 		return "<img border=\"0\" src=\"images/wgt/calendar.gif\" class=\"wgtPointerCursor\" " + JSUtil.atId(getId() + DOT_BUTTON)
-				+ "style=\"vertical-align:middle; " + (ctx.processBool(buttonVis) ? "" : "display: none;") + "\"> ";
+				+ "style=\"vertical-align:middle; " + stringVis + "\"> ";
 	}
 
 	public int getMaxlength() {
@@ -356,5 +359,12 @@ public class Text extends FormControl implements IText {
 	public void mark() {
         getContext().add(getId()+".selecta", "", IContext.TYPE_FOCUS, IContext.STATUS_NOT_EDITABLE);    	
         getContext().sendJavaScriptState(getId()+".selectall", "byId('"+getId()+"').select();");
+	}
+
+	@Override
+	public void setVisible(boolean vis) {
+		if( hasDatePicker() )
+			getContext().makeVisible(getId()+DOT_BUTTON, vis);
+		super.setVisible(vis);
 	}
 }

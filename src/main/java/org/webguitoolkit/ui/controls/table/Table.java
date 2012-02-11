@@ -414,7 +414,7 @@ public class Table extends BaseControl implements ITable, ICompoundLifecycleElem
 				int all = Integer.parseInt(allEntries);
 				// add cell for scroll bar to the last column of the first row and setRowSpan
 				TD td = new TD();
-				td.setStyle("padding: 0px;vertical-align: top; background-color: #cccccc; height: 100%; width: 12px;");
+				td.setStyle("padding: 0px;vertical-align: top; background-color: #cccccc; width: 12px;");
 				td.setOnClick("event.cancelBubble=true;");
 				td.setRowSpan(getRows());
 

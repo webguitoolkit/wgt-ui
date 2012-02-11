@@ -11,7 +11,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
 implied. See the License for the specific language governing permissions 
 and limitations under the License.
-*/ 
+*/
 package org.webguitoolkit.ui.controls.util.validation;
 
 import org.apache.commons.lang.StringUtils;
@@ -26,56 +26,63 @@ import org.webguitoolkit.ui.controls.util.TextService;
  */
 public class IntegerValidator implements IValidator {
 
+	private static final long serialVersionUID = 1L;
 	private boolean checkPositive = false;
 	private boolean checkGreaterThan0 = false;
 	private boolean checkMinValue = false;
 	private boolean checkMaxValue = false;
 	private int minValue, maxValue;
-	
+
+	public IntegerValidator() {
+	}
+
+	public IntegerValidator(int min, int max) {
+		super();
+		setMinValue(min);
+		setMaxValue(max);
+	}
+
 	public void validate(String value) throws ValidationException {
 		// empty is ok
 		if (StringUtils.isEmpty(value))
 			return;
 		try {
 			Integer aInteger = new Integer(value);
-			if (isCheckPositive() && aInteger.intValue() < 0)
-			{
-				throw new ValidationException(TextService.getString(
-				"validator.IntegerValidator.message.positive@The value must be a positive integer."));
+			if (isCheckPositive() && aInteger.intValue() < 0) {
+				throw new ValidationException(
+						TextService.getString("validator.IntegerValidator.message.positive@The value must be a positive integer."));
 			}
-			if (isCheckGreaterThan0() && aInteger.intValue() <= 0)
-			{
-				throw new ValidationException(TextService.getString(
-				"validator.IntegerValidator.message.greater0@The value must be a greater than 0."));
+			if (isCheckGreaterThan0() && aInteger.intValue() <= 0) {
+				throw new ValidationException(
+						TextService.getString("validator.IntegerValidator.message.greater0@The value must be a greater than 0."));
 			}
-			if (isCheckMinValue() && aInteger.intValue() < getMinValue())
-			{
+			if (isCheckMinValue() && aInteger.intValue() < getMinValue()) {
 				throw new ValidationException(TextService.getString(
-				"validator.IntegerValidator.message.greaterMinValue@The value must be greater than or equal {1}.", getMinValue() + ""));
+						"validator.IntegerValidator.message.greaterMinValue@The value must be greater than or equal {1}.", getMinValue()
+								+ ""));
 			}
-			if (isCheckMaxValue() && aInteger.intValue() > getMaxValue())
-			{
+			if (isCheckMaxValue() && aInteger.intValue() > getMaxValue()) {
 				throw new ValidationException(TextService.getString(
-				"validator.IntegerValidator.message.lessMaxValue@The value must be less than or equal {1}.", getMaxValue() + ""));
+						"validator.IntegerValidator.message.lessMaxValue@The value must be less than or equal {1}.", getMaxValue() + ""));
 			}
-		} catch (NumberFormatException e) {
-			throw new ValidationException(TextService.getString(
-					"validator.IntegerValidator.message@The value must be an integer."));
-		}		
+		}
+		catch (NumberFormatException e) {
+			throw new ValidationException(TextService.getString("validator.IntegerValidator.message@The value must be an integer."));
+		}
 	}
-	
+
 	public boolean isCheckGreaterThan0() {
 		return checkGreaterThan0;
 	}
-	
+
 	public void setCheckGreaterThan0(boolean checkGreaterThan0) {
 		this.checkGreaterThan0 = checkGreaterThan0;
 	}
-	
+
 	public boolean isCheckPositive() {
 		return checkPositive;
 	}
-	
+
 	public void setCheckPositive(boolean checkPositive) {
 		this.checkPositive = checkPositive;
 	}
@@ -92,7 +99,7 @@ public class IntegerValidator implements IValidator {
 	private boolean isCheckMinValue() {
 		return checkMinValue;
 	}
-	
+
 	private void setCheckMinValue(boolean checkMinValue) {
 		this.checkMinValue = checkMinValue;
 	}
@@ -115,6 +122,6 @@ public class IntegerValidator implements IValidator {
 	}
 
 	public String getTooltip() {
-		return TextService.getString("validator.IntegerValidator.tooltip" );
+		return TextService.getString("validator.IntegerValidator.tooltip");
 	}
 }

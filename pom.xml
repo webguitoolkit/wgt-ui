@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.webguitoolkit.ui</groupId>
 	<artifactId>webguitoolkit-ui</artifactId>
-	<name>Web GUI Toolkit</name>
+	<name>wgt-ui</name>
 	<version>01.03.17-SNAPSHOT</version>
 	<description>
   	Goals:
@@ -19,7 +19,7 @@
 	- Fast development of GUIs
 	- Extendable and flexibel framework
   </description>
-	<url>http://code.google.com/p/webguitoolkit/</url>
+	<url>https://webguitoolkit@github.com/webguitoolkit/wgt-ui.git</url>
 
 	<licenses>
 		<license>
@@ -132,7 +132,7 @@
 			<plugin>
 				<groupId>net.alchim31.maven</groupId>
 				<artifactId>yuicompressor-maven-plugin</artifactId>
-				<version>0.9</version>
+				<version>1.1</version>
 				<executions>
 					<execution>
 						<goals>
