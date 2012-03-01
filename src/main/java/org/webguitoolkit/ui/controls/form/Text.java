@@ -252,10 +252,10 @@ public class Text extends FormControl implements IText {
 		IContext ctx = getContext();
 		String idVis = getId() + DOT_BUTTON + IContext.DOT_VIS;
 		String stringVis = "";
-		if( !ctx.processBool(idVis) ){
+		if (ctx.getValue(idVis) != null && !ctx.processBool(idVis)) {
 			stringVis = "display: none;";
 		}
-//		ctx.add(buttonVis, "true", IContext.TYPE_VIS, IContext.STATUS_NOT_EDITABLE);
+
 		return "<img border=\"0\" src=\"images/wgt/calendar.gif\" class=\"wgtPointerCursor\" " + JSUtil.atId(getId() + DOT_BUTTON)
 				+ "style=\"vertical-align:middle; " + stringVis + "\"> ";
 	}
@@ -324,7 +324,7 @@ public class Text extends FormControl implements IText {
 		super.setConverter(conv);
 		if (conv instanceof IDatePickerConverter) {
 			getPage().addHeaderCSS("./" + ResourceServlet.SERVLET_URL_PATTERN + "/eh/calendar.css");
-			getPage().addWgtJS( JSResourceProcessor.CALENDAR_JS + "_" + TextService.getLocale().getLanguage() + ".js");
+			getPage().addWgtJS(JSResourceProcessor.CALENDAR_JS + "_" + TextService.getLocale().getLanguage() + ".js");
 		}
 	}
 
@@ -357,14 +357,14 @@ public class Text extends FormControl implements IText {
 	 * @see org.webguitoolkit.ui.controls.form.IText#mark()
 	 */
 	public void mark() {
-        getContext().add(getId()+".selecta", "", IContext.TYPE_FOCUS, IContext.STATUS_NOT_EDITABLE);    	
-        getContext().sendJavaScriptState(getId()+".selectall", "byId('"+getId()+"').select();");
+		getContext().add(getId() + ".selecta", "", IContext.TYPE_FOCUS, IContext.STATUS_NOT_EDITABLE);
+		getContext().sendJavaScriptState(getId() + ".selectall", "byId('" + getId() + "').select();");
 	}
 
 	@Override
 	public void setVisible(boolean vis) {
-		if( hasDatePicker() )
-			getContext().makeVisible(getId()+DOT_BUTTON, vis);
+		if (hasDatePicker())
+			getContext().makeVisible(getId() + DOT_BUTTON, vis);
 		super.setVisible(vis);
 	}
 }

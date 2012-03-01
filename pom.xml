@@ -9,9 +9,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.webguitoolkit.ui</groupId>
-	<artifactId>webguitoolkit-ui</artifactId>
+	<artifactId>wgt-ui</artifactId>
 	<name>wgt-ui</name>
-	<version>01.03.17-SNAPSHOT</version>
+	<version>02.00.00-SNAPSHOT</version>
 	<description>
   	Goals:
 	- Same look and feel (Style Guide)
@@ -203,11 +203,11 @@
 		<!-- dependency> <groupId>uk.ltd.getahead.dwr</groupId> <artifactId>dwr</artifactId> 
 			<version>2.0.6</version> </dependency -->
 
-	<dependency>
-  <groupId>org.directwebremoting</groupId>
-  <artifactId>dwr</artifactId>
-  <version>3.0.M1</version>
-</dependency>
+		<dependency>
+			<groupId>org.directwebremoting</groupId>
+			<artifactId>dwr</artifactId>
+			<version>3.0.M1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>ecs</groupId>

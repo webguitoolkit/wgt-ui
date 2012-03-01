@@ -46,9 +46,15 @@ import org.webguitoolkit.ui.controls.util.style.IStyleChangeListener;
  */
 public class TableColumn extends BaseControl implements ITableColumn, IComposite {
 
+	private static final long serialVersionUID = 1L;
 	public static final String SELECT_ALL = ".selAll";
- 
-	protected String align;
+	private static final String DEFAULT_CSS_CLASS = "wgtTDNormal";
+
+	public enum ALIGN {
+		NONE, LEFT, RIGHT;
+	}
+
+	protected ALIGN align = ALIGN.NONE;
 	protected boolean filter;
 	protected boolean mandatory = false;
 	protected boolean sortable = true;
@@ -63,12 +69,12 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 	boolean exporatble = true;
 	String tooltip;
 
-
 	/**
 	 * @see org.webguitoolkit.ui.controls.BaseControl#BaseControl()
 	 */
 	public TableColumn() {
 		super();
+		setDefaultCssClass(DEFAULT_CSS_CLASS);
 	}
 
 	/**
@@ -77,9 +83,10 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 	 */
 	public TableColumn(String id) {
 		super(id);
+		setDefaultCssClass(DEFAULT_CSS_CLASS);
 	}
 
-	public String getAlign() {
+	public ALIGN getAlign() {
 		return align;
 	}
 
@@ -116,7 +123,7 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 		return sortable;
 	}
 
-	public void setAlign(String align) {
+	public void setAlign(ALIGN align) {
 		this.align = align;
 	}
 
@@ -295,7 +302,7 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 			td.setWidth(getWidth());
 		if (hasStyle())
 			td.setStyle(getStyleAsString());
-		if (StringUtils.isNotBlank(getTooltip())){
+		if (StringUtils.isNotBlank(getTooltip())) {
 			td.setTitle(StringEscapeUtils.escapeHtml(getTooltip()));
 		}
 		if (isSortable())
@@ -382,17 +389,20 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 		if (hasStyle()) {
 			cellStyle = getStyleAsString();
 		}
-		String cellClass = "";
-		if (!StringUtils.isEmpty(getCssClass())) {
-			cellClass = getCssClass();
-		}
-		else {
-			cellClass = "wgtTDNormal";
+
+		if (StringUtils.isEmpty(getCssClass())) {
+			setDefaultCssClass(DEFAULT_CSS_CLASS);
 		}
 
-		if (getRenderer() instanceof PlainTextColumnRenderer
+		if (getAlign() == ALIGN.RIGHT) {
+			addCssClass("wgtAlignRight");
+		}
+		else if (getAlign() == ALIGN.LEFT) {
+			// do nothing --> is left aligned by default
+		}
+		else if (getAlign() == ALIGN.NONE && getRenderer() instanceof PlainTextColumnRenderer
 				&& (getConverter() instanceof NumberConverter || getConverter() instanceof NumberConverterPrecise)) {
-			cellClass += " wgtAlignRight";
+			addCssClass("wgtAlignRight");
 		}
 
 		// give the renderer a chance to produce the content of the cell.
@@ -406,8 +416,8 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 		td.setID(cellId);
 		if (StringUtils.isNotEmpty(cellStyle))
 			td.setStyle(cellStyle);
-		if (StringUtils.isNotEmpty(cellClass))
-			td.setClass(cellClass);
+		if (StringUtils.isNotEmpty(getCssClass()))
+			td.setClass(getCssClass());
 		td.addElement(cellContent);
 		return td;
 	}
@@ -434,7 +444,7 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 	public void add(IBaseControl child) {
 		super.add(child);
 	}
-	
+
 	/**
 	 * @return the exporatble
 	 */
@@ -448,7 +458,7 @@ public class TableColumn extends BaseControl implements ITableColumn, IComposite
 	public void setExporatble(boolean exporatble) {
 		this.exporatble = exporatble;
 	}
-	
+
 	public String getTooltip() {
 		return tooltip;
 	}

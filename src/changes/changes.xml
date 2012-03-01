@@ -31,6 +31,12 @@ e.g.
  -->
 	<body>
 	 <release version="01.03.17" description="Extensions and bugfixes" date="2012-xx-xx">
+	 	<action dev="sattlera" type="fix" date="2012-02-22">
+            IconButton: was clickable even if the control was disabled
+        </action>
+	 	<action dev="sattlera" type="add" date="2012-02-13">
+            Added possibility to set an action-listener to a checkbox-table-column
+        </action>
 	 	<action dev="sattlera" type="fix" date="2012-01-23">
             TableExport: regard exportable-flag to exclude certain columns from table export
         </action>

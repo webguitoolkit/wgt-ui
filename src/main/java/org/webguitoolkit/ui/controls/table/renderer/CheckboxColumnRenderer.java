@@ -21,6 +21,7 @@ import org.apache.ecs.html.Input;
 import org.webguitoolkit.ui.ajax.ContextElement;
 import org.webguitoolkit.ui.ajax.IContext;
 import org.webguitoolkit.ui.controls.event.ClientEvent;
+import org.webguitoolkit.ui.controls.event.IActionListener;
 import org.webguitoolkit.ui.controls.form.CheckBox;
 import org.webguitoolkit.ui.controls.form.FormControl;
 import org.webguitoolkit.ui.controls.table.ITableColumn;
@@ -38,9 +39,15 @@ import org.webguitoolkit.ui.controls.util.JSUtil;
 public class CheckboxColumnRenderer extends ChildColumnRenderer {
 
 	private String checkBoxId;
+	private IActionListener cbActionListener = null;
 
 	public CheckboxColumnRenderer() {
 		super();
+	}
+
+	public CheckboxColumnRenderer(IActionListener addActionListener) {
+		super();
+		this.cbActionListener = addActionListener;
 	}
 
 	public CheckboxColumnRenderer(String newCheckBoxId) {
@@ -65,6 +72,11 @@ public class CheckboxColumnRenderer extends ChildColumnRenderer {
 		cb.setParent(table);
 		cb.setProperty(tableColumn.getProperty());
 		cb.setCompound(compound);
+
+		if (cbActionListener != null) {
+			cb.setActionListener(cbActionListener);
+		}
+
 		if (tableColumn.getIsDisplayed()) {
 			compound.addElement(cb);
 		}
@@ -127,5 +139,4 @@ public class CheckboxColumnRenderer extends ChildColumnRenderer {
 			input.output(out);
 		}
 	}
-
 }

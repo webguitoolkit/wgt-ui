@@ -149,6 +149,58 @@ body, td, th, input, select, textarea, wgtLabelFor
 }
 
 /**********************************************************
+ Level bar 3D
+***********************************************************/
+
+.wgtLevelBar3D {
+	border: none;
+	background-image: url("../images/3d-level_empty_80.gif");
+	background-repeat: no-repeat;
+	vertical-align: bottom;
+	width: 80px;
+	white-space: nowrap;
+	margin: 1px;
+}
+
+.wgtLevelBar3DInverse {
+	border: none;
+	background-image: url("../images/3d-level_empty_80.gif");
+	background-repeat: no-repeat;
+	vertical-align: bottom;
+	width: 80px;
+	white-space: nowrap;
+	margin: 1px;
+	text-align: right;
+}
+
+.wgtLevelBar3DTxt {
+	position: absolute;
+	padding-left: 6px;
+	font-size: 0.95em;
+	font-weight: bold;
+}
+
+.wgtLevelBar3DTxtInverse {
+	position: absolute;
+	padding-left: 6px;
+	font-size: 0.95em;
+	text-align: left;
+	margin-left: -80px;
+	font-weight: bold;
+}
+
+/* set no margin for non-ie */
+html>body .wgtLevelBar3DTxtInverse {
+	margin-left: 0px;
+}
+
+.wgtLevelBar3DLeft {
+	vertical-align: bottom;
+	background-color:#0099FF; 
+	height: 1.5em;
+}
+
+/**********************************************************
  Progress bar
 ***********************************************************/
 
